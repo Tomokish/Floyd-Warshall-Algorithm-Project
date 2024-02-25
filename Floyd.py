@@ -1,11 +1,12 @@
+# Import the libraries
 import sys
-
 NO_PATH = sys.maxsize
 
+# Define the floyd-warshall recursive function
 def floyd_warshall_recursive(graph):
     """
     Floyd-Warshall algorithm to find the shortest paths between all pairs of nodes using recursion.
-    
+
     Args:
     graph (list of lists): The adjacency matrix representation of the graph.
     
@@ -14,10 +15,12 @@ def floyd_warshall_recursive(graph):
     """
     num_nodes = len(graph)
     
+    # Define the helper function
     def helper(distance, intermediate_node, start_node, end_node):
         """
         Helper function for recursive computation of shortest distances.
         """
+        # Base cases for recursion
         if intermediate_node >= num_nodes:
             return
         
@@ -30,9 +33,11 @@ def floyd_warshall_recursive(graph):
         if start_node == end_node:
             return helper(distance, intermediate_node, start_node, end_node + 1)
         
+        # Update the shortest distance
         if distance[start_node][intermediate_node] + distance[intermediate_node][end_node] < distance[start_node][end_node]:
             distance[start_node][end_node] = distance[start_node][intermediate_node] + distance[intermediate_node][end_node]
         
+        # Recursive Call
         return helper(distance, intermediate_node, start_node, end_node + 1)
 
     # Initialize distance matrix with the same values as the adjacency matrix

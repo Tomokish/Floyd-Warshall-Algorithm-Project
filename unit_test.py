@@ -1,7 +1,12 @@
+# Import Library
 import unittest
 from Floyd import floyd_warshall_recursive
 
+# Desine a test class
 class TestFloydWarshallRecursive(unittest.TestCase):
+
+
+# Test Methods
     def test_shortest_distances(self):
         graph = [
             [0, 7, float('inf'), 8],
