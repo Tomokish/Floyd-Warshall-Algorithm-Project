@@ -1,1 +1,1 @@
-https://github.com/Tomokish/Floyd-Algorithm-Assignment.git
+https://github.com/Tomokish/Floyd-Warshall-Algorithm-Project.git
